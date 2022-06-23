@@ -1,4 +1,4 @@
-var express = require('express')
+import express  from "express";
 var app = express()
 
 import { allRoutes } from "./routes.js";

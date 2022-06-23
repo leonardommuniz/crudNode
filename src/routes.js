@@ -1,4 +1,4 @@
-const express = resquire('express')
+import express from "express";
 
 const allRoutes = express.Router()
 
@@ -10,14 +10,13 @@ allRoutes.post('/user', (req, res) => {
     allUsers.push({ name:name, status:false })
     return res
             .status(201)
-            .Json(name)
-            .send(`Usuario ${name} adicionado com sucesso!`)
+            .json({data: name, message: `Usuario ${name} adicionado com sucesso!`})
 })
-// Reade
+// List
 allRoutes.get('/users', (req, res) => {
     return res
     .status(201)
-    .Json(allUsers)
+    .json(allUsers)
 })
 
-export default allRoutes
+export { allRoutes }
